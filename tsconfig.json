@@ -22,6 +22,7 @@
       "node_modules/@types"
     ]
   },
-  "include": ["./src", "./types"],
+  "exclude": ["dist", "node_modules"],
+  "include": ["./src", "./types", "jest.config.js"],
   "compileOnSave": false
 }
