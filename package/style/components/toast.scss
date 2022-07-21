@@ -1,0 +1,20 @@
+@keyframes atRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.li-toast {
+  &__body {
+    &--loading {
+      .toast-body-content__img-item {
+        animation: atRotate 1350ms linear infinite;
+      }
+    }
+  }
+}

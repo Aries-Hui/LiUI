@@ -12,6 +12,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strictNullChecks": true,
+    "skipLibCheck": true,
     "sourceMap": true,
     "baseUrl": ".",
     "rootDir": ".",
@@ -22,13 +23,14 @@
       "node_modules/@types"
     ],
     "paths": {
-      "@/common/*": ["./src/components/common/*"],
-      "@/components/*": ["./src/components/components/*"],
-      "@/style/*": ["./src/components/style/*"],
+      "@/common/*": ["./package/common/*"],
+      "@/components/*": ["./package/components/*"],
+      "@/style/*": ["./package/style/*"],
     }
   },
-  "exclude": ["dist", "node_modules"],
+  "exclude": ["dist/*", "node_modules/*"],
   "include": [
-    "./src", "./types", "jest.config.js"],
+    "./src", "./types", "jest.config.js"
+  ],
   "compileOnSave": false,
 }

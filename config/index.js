@@ -10,7 +10,7 @@ const config = {
     828: 1.81 / 2,
   },
   sourceRoot: 'src',
-  outputRoot: 'dist',
+  outputRoot: 'dist-taro',
   plugins: [],
   defineConstants: {},
   copy: {
@@ -75,24 +75,15 @@ const config = {
     },
   },
   alias: {
-    '@/common': path.resolve(__dirname, '..', 'src/components/common'),
-    '@/components': path.resolve(__dirname, '..', 'src/components/components'),
-    '@/style': path.resolve(__dirname, '..', 'src/components/style'),
+    '@/common': path.resolve(__dirname, '..', 'package/common'),
+    '@/components': path.resolve(__dirname, '..', 'package/components'),
+    '@/style': path.resolve(__dirname, '..', 'package/style'),
   },
 }
 
 module.exports = (merge) => {
-  let module
-
   if (process.env.NODE_ENV === 'development') {
-    module = merge({}, config, require('./dev'))
-  } else {
-    module = merge({}, config, require('./prod'))
+    return merge({}, config, require('./dev'))
   }
-
-  if (process.env.TARO_BUILD_TYPE === 'ui') {
-    module = merge({}, config, require('./ui'))
-  }
-
-  return module
+  return merge({}, config, require('./prod'))
 }
