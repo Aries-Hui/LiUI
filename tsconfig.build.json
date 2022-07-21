@@ -1,11 +1,12 @@
 {
   "extends": "./tsconfig",
   "compilerOptions": {
+    "sourceMap": false,
     "target": "es2017",
     "module": "es6",
     "outDir": "./lib"
   },
   "include": [
-    "./package/**/*"
+    "./packages/**/*"
   ],
 }

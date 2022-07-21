@@ -75,9 +75,10 @@ const config = {
     },
   },
   alias: {
-    '@/common': path.resolve(__dirname, '..', 'package/common'),
-    '@/components': path.resolve(__dirname, '..', 'package/components'),
-    '@/style': path.resolve(__dirname, '..', 'package/style'),
+    '@/common': path.resolve(__dirname, '..', 'packages/common'),
+    '@/components': path.resolve(__dirname, '..', 'packages/components'),
+    '@/style': path.resolve(__dirname, '..', 'packages/style'),
+    '@/types': path.resolve(__dirname, '..', 'packages/types'),
   },
 }
 

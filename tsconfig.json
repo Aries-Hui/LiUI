@@ -8,14 +8,11 @@
     "experimentalDecorators": true,
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
-    "outDir": "lib",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strictNullChecks": true,
     "skipLibCheck": true,
     "sourceMap": true,
-    "baseUrl": ".",
-    "rootDir": ".",
     "jsx": "react-jsx",
     "allowJs": true,
     "resolveJsonModule": true,
@@ -23,14 +20,18 @@
       "node_modules/@types"
     ],
     "paths": {
-      "@/common/*": ["./package/common/*"],
-      "@/components/*": ["./package/components/*"],
-      "@/style/*": ["./package/style/*"],
+      "@/common/*": ["./packages/common/*"],
+      "@/components/*": ["./packages/components/*"],
+      "@/style/*": ["./packages/style/*"],
+      "@/types/*": ["./types/*"],
     }
   },
   "exclude": ["dist/*", "node_modules/*"],
   "include": [
-    "./src", "./types", "jest.config.js"
+    "./src",
+    "./packages",
+    "./types",
+    "jest.config.js"
   ],
   "compileOnSave": false,
 }

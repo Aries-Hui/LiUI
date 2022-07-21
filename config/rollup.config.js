@@ -46,8 +46,8 @@ export default {
     RollupCopy({
       targets: [
         {
-          src: resolveFile('package/style'),
-          dest: resolveFile('dist/dist'),
+          src: resolveFile('packages/style'),
+          dest: resolveFile('dist'),
         },
       ],
     }),

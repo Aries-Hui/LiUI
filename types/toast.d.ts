@@ -1,4 +1,9 @@
-export interface LiToastProps {
+import { ComponentClass } from 'react'
+import { CommonEventFunction } from '@tarojs/components/types/common'
+
+import AtComponent from './base'
+
+export interface LiToastProps extends AtComponent {
   /**
    * 是否展示元素
    * @default false
@@ -38,3 +43,11 @@ export interface LiToastProps {
    */
   onClose?: CommonEventFunction
 }
+
+export interface LiToastState {
+  _isOpened: boolean
+}
+
+declare const LiToast: ComponentClass<LiToastProps>
+
+export default LiToast

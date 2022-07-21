@@ -1,1 +1,1 @@
-export { default as LiToast } from './toast'
+export { default as Toast } from './toast'
