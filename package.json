@@ -29,7 +29,8 @@
     "dev:quickapp": "npm run build:quickapp -- --watch",
     "prepare": "husky install",
     "lint": "eslint src __tests__ --ext .js,.ts --cache --fix",
-    "test": "jest"
+    "test": "jest",
+    "ui:h5": "TARO_BUILD_TYPE=ui npm run build:h5"
   },
   "browserslist": [
     "last 3 versions",
@@ -69,6 +70,7 @@
     "babel-preset-taro": "3.5.0-beta.7",
     "eslint": "7.32.0",
     "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "17.0.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-taro": "3.5.0-beta.7",
     "eslint-plugin-import": "2.26.0",

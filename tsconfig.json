@@ -20,9 +20,15 @@
     "resolveJsonModule": true,
     "typeRoots": [
       "node_modules/@types"
-    ]
+    ],
+    "paths": {
+      "@/common/*": ["./src/components/common/*"],
+      "@/components/*": ["./src/components/components/*"],
+      "@/style/*": ["./src/components/style/*"],
+    }
   },
   "exclude": ["dist", "node_modules"],
-  "include": ["./src", "./types", "jest.config.js"],
-  "compileOnSave": false
+  "include": [
+    "./src", "./types", "jest.config.js"],
+  "compileOnSave": false,
 }
