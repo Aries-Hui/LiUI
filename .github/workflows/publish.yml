@@ -37,7 +37,6 @@ jobs:
         run: npm run build
       - name: semantic-release
         run: |
-          npm whoami
           npm config set @aries-hui:registry https://registry.npmjs.org
           npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
           npm config list
