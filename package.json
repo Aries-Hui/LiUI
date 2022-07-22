@@ -1,6 +1,6 @@
 {
   "name": "@aries-hui/liui",
-  "version": "1.0.4-beta.0",
+  "version": "1.0.4",
   "description": "liui ui 组件库",
   "browser": "dist/index.umd.js",
   "module": "dist/index.esm.js",
@@ -59,7 +59,8 @@
     "test": "jest",
     "build": "npm run build:rollup && npm run build:lib",
     "build:lib": "tsc --project ./tsconfig.build.json",
-    "build:rollup": "rollup --config ./config/rollup.config.js"
+    "build:rollup": "rollup --config ./config/rollup.config.js",
+    "semantic-release": "semantic-release"
   },
   "browserslist": [
     "last 3 versions",
