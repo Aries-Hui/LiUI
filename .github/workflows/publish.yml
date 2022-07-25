@@ -23,7 +23,7 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v2
       - name: Setup Node ${{ matrix.node_version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
@@ -48,6 +48,6 @@ jobs:
 #          NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
 #          NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
       - name: upload wechat
-        run: |
-          npm run build:weapp-npx
+        run:
+          npx taro build --type weapp
           npm run upload:weapp
