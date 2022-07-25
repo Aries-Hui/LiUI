@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/Aries-Hui/LiUI/compare/v1.3.0...v1.3.1) (2022-07-25)
+
+
+### Bug Fixes
+
+* fix git ignore ([443f59c](https://github.com/Aries-Hui/LiUI/commit/443f59c315d8afba6b4e50a6cefcedcbfe06eb2e))
+
 # [1.3.0](https://github.com/Aries-Hui/LiUI/compare/v1.2.0...v1.3.0) (2022-07-22)
 
 
