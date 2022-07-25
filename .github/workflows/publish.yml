@@ -27,12 +27,12 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
-      - name: linter
+      - name: ci
         run:  npm ci
-          npm run lint
+      - name: linter
+        run:  npm run lint
       - name: tests
-        run: npm ci
-          npm run test
+        run: npm run test
       - name: liui build
         run: npm run build
       - name: semantic-release
@@ -47,8 +47,10 @@ jobs:
           NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
           NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
           NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
-      - name: upload wechat
+      - name: install @tarojs/cli
         run: npm install -g @tarojs/cli
-          npm run build:weapp
-          npm run upload:weapp
+      - name:  build weapp/demo
+        run: npm run build:weapp
+      - name: publish weapp/demo
+        run:  npm run upload:weapp
 
