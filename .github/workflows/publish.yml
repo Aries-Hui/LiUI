@@ -12,8 +12,8 @@ on:
     types: [closed]
 jobs:
 
-  npm-ci:
-    name: npm ci
+  linter-test:
+    name: linter test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -22,36 +22,12 @@ jobs:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
-
-  linter:
-    needs:
-      - npm-ci
-    name: linter
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: 'https://registry.npmjs.org'
       - run: npm run lint
-
-  tests:
-    needs:
-      - npm-ci
-    name: tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: 'https://registry.npmjs.org'
       - run: npm run test
 
   npm-build-release:
     needs:
-      - npm-ci
-      - linter
-      - tests
+      - linter-test
     name: npm / github release build
     runs-on: ubuntu-latest
     steps:
@@ -59,13 +35,12 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
       - run: npm run build
 
   weapp-build-release:
     needs:
-      - npm-ci
-      - linter
-      - tests
+      - linter-test
     name: weapp release build
     runs-on: ubuntu-latest
     steps:
@@ -73,13 +48,12 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
       - run: npx taro build --type weapp
 
   npm-publish-release:
     needs:
-      - npm-ci
-      - linter
-      - tests
+      - linter-test
       - npm-build-release
     name: npm / github releases publish
     runs-on: ubuntu-latest
@@ -94,15 +68,14 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
       - run: npm config set @aries-hui:registry https://registry.npmjs.org
       - run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
       - run: npm run semantic-release
 
   weapp-publish-release:
     needs:
-      - npm-ci
-      - linter
-      - tests
+      - linter-test
       - weapp-build-release
     name: weapp release publish
     runs-on: ubuntu-latest
@@ -111,4 +84,5 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
       - run: npm run upload:weapp
