@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/Aries-Hui/LiUI/compare/v1.3.1...v1.3.2) (2022-07-25)
+
+
+### Bug Fixes
+
+* fix wechat build ci ([092d246](https://github.com/Aries-Hui/LiUI/commit/092d246ca060748515bdc991a9df90eff6f28942))
+
 ## [1.3.1](https://github.com/Aries-Hui/LiUI/compare/v1.3.0...v1.3.1) (2022-07-25)
 
 
