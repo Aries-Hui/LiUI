@@ -11,78 +11,44 @@ on:
       - 'master'
     types: [closed]
 jobs:
-
-  linter-test:
-    name: linter test
+  publish:
+    name: publish
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [ 16.x ]
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+      - name: Setup Node ${{ matrix.node_version }}
+        uses: actions/setup-node@v2
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run test
+      - name: linter
+        run:  npm ci
+          npm run lint
+      - name: tests
+        run: npm ci
+          npm run test
+      - name: liui build
+        run: npm run build
+      - name: semantic-release
+        run: |
+          npm config set @aries-hui:registry https://registry.npmjs.org
+          npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+          npm config list
+          npm run semantic-release
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
+          NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
+          NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
+      - name: upload wechat
+        run: npm install -g @tarojs/cli
+          npm run build:weapp
+          npm run upload:weapp
 
-  npm-build-release:
-    needs:
-      - linter-test
-    name: npm / github release build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npm run build
-
-  weapp-build-release:
-    needs:
-      - linter-test
-    name: weapp release build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npx taro build --type weapp
-
-  npm-publish-release:
-    needs:
-      - linter-test
-      - npm-build-release
-    name: npm / github releases publish
-    runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
-      NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
-      NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
-    steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npm config set @aries-hui:registry https://registry.npmjs.org
-      - run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
-      - run: npm run semantic-release
-
-  weapp-publish-release:
-    needs:
-      - linter-test
-      - weapp-build-release
-    name: weapp release publish
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npm run upload:weapp
