@@ -48,6 +48,6 @@ jobs:
 #          NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
 #          NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
       - name: upload wechat
-        run:
-          npx taro build --type weapp
+        run: |
+          npx taro build --type weapp |
           npm run upload:weapp
