@@ -27,9 +27,9 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
-#      - name: linter
-#        run:  npm ci
-#          npm run lint
+      - name: linter
+        run:  npm ci
+          npm run lint
 #      - name: tests
 #        run: npm ci
 #          npm run test
@@ -48,6 +48,5 @@ jobs:
 #          NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
 #          NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
       - name: upload wechat
-        run: |
-          npx taro build --type weapp |
+        run: npx taro build --type weapp
           npm run upload:weapp
