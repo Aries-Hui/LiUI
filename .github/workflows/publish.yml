@@ -48,7 +48,7 @@ jobs:
           NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
           NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
       - name: install @tarojs/cli
-        run: npm install -g @tarojs/cli
+        run: npm install --global @tarojs/cli
       - name:  build weapp/demo
         run: npm run build:weapp
       - name: publish weapp/demo
