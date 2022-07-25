@@ -48,4 +48,6 @@ jobs:
           NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
           NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
       - name: upload wechat
-        run: npm run upload:weapp
+        run: |
+          npm run build:weapp
+          npm run upload:weapp
