@@ -49,5 +49,5 @@ jobs:
           NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
       - name: upload wechat
         run: |
-          npm run build:weapp
+          npx taro build --type weapp
           npm run upload:weapp
