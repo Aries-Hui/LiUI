@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/Aries-Hui/LiUI/compare/v1.2.0...v1.3.0) (2022-07-22)
+
+
+### Features
+
+* new feature # => v1.0.4-beta.1 on [@beta](https://github.com/beta) ([cf7b607](https://github.com/Aries-Hui/LiUI/commit/cf7b607388d25bbe3e13f94fefeb8ade8d51c43e))
+* new feature # => v1.0.4-beta.1 on [@beta](https://github.com/beta) ([4f8791a](https://github.com/Aries-Hui/LiUI/commit/4f8791ad825e0fd1a8b1390b482889fe0567669d))
+
 # [1.2.0](https://github.com/Aries-Hui/LiUI/compare/v1.1.0...v1.2.0) (2022-07-22)
 
 
