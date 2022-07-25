@@ -27,27 +27,27 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
-      - name: linter
-        run:  npm ci
-          npm run lint
-      - name: tests
-        run: npm ci
-          npm run test
-      - name: liui build
-        run: npm run build
-      - name: semantic-release
-        run: |
-          npm config set @aries-hui:registry https://registry.npmjs.org
-          npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
-          npm config list
-          npm run semantic-release
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
-          NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
-          NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
+#      - name: linter
+#        run:  npm ci
+#          npm run lint
+#      - name: tests
+#        run: npm ci
+#          npm run test
+#      - name: liui build
+#        run: npm run build
+#      - name: semantic-release
+#        run: |
+#          npm config set @aries-hui:registry https://registry.npmjs.org
+#          npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+#          npm config list
+#          npm run semantic-release
+#        env:
+#          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+#          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+#          NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
+#          NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
+#          NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
       - name: upload wechat
         run: |
-          npx taro build --type weapp
+          npm run build:weapp-npx
           npm run upload:weapp
