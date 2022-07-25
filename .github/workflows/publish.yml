@@ -13,9 +13,6 @@ on:
 jobs:
 
   npm-ci:
-    needs:
-      - git-checkout
-      - setup-node
     name: npm ci
     runs-on: ubuntu-latest
     steps:
