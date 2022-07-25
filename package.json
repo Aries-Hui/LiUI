@@ -59,8 +59,9 @@
     "test": "jest",
     "build": "npm run build:rollup && npm run build:lib",
     "build:lib": "tsc --project ./tsconfig.build.json",
-    "build:rollup": "rollup --config ./config/rollup.config.js",
-    "semantic-release": "semantic-release"
+    "build:rollup": "rollup --config scirpts/rollup.config.js",
+    "semantic-release": "semantic-release",
+    "upload:weapp": "node scirpts/miniprogram-ci.js"
   },
   "browserslist": [
     "last 3 versions",
@@ -118,6 +119,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "husky": "8.0.1",
     "jest": "28.1.3",
+    "miniprogram-ci": "^1.8.35",
     "prettier": "2.7.1",
     "react-refresh": "0.11.0",
     "rollup": "2.77.0",

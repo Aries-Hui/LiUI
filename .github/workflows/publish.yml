@@ -47,3 +47,5 @@ jobs:
           NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
           NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
           NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
+      - name: upload wechat
+        run: npm run upload:weapp
