@@ -6,6 +6,7 @@ import RollupTypescript from 'rollup-plugin-typescript2'
 import RollupCopy from 'rollup-plugin-copy'
 import Package from '../package.json'
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 const resolveFile = (path) => NodePath.resolve(__dirname, '..', path)
 
 const externalPackages = [

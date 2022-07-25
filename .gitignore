@@ -1,4 +1,6 @@
 dist/
+dist-taro/
+lib/
 deploy_versions/
 .temp/
 .rn_temp/
