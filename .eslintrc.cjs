@@ -28,6 +28,8 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-console': 'off',
+    'react/state-in-constructor': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
   },
