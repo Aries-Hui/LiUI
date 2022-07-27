@@ -1,3 +1,11 @@
+## [1.3.3](https://github.com/Aries-Hui/LiUI/compare/v1.3.2...v1.3.3) (2022-07-26)
+
+
+### Bug Fixes
+
+* add component icon ([ea9647a](https://github.com/Aries-Hui/LiUI/commit/ea9647ab4cc997bd13e90d7c13864a02fb2db881))
+* type button.d.ts ([a6092fa](https://github.com/Aries-Hui/LiUI/commit/a6092fa382228194b5ac121c0736a32d51303d8b))
+
 ## [1.3.2](https://github.com/Aries-Hui/LiUI/compare/v1.3.1...v1.3.2) (2022-07-25)
 
 
