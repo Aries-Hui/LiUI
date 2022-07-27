@@ -22,11 +22,11 @@ const config = {
     type: 'webpack5',
     // 依赖预编译配置
     prebundle: {
-      enable: true,
+      enable: false,
     },
   },
   cache: {
-    enable: true, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
+    enable: false, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
   },
   mini: {
     postcss: {
@@ -47,6 +47,9 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]',
         },
       },
+    },
+    optimizeMainPackage: {
+      enable: true,
     },
   },
   h5: {
@@ -78,7 +81,7 @@ const config = {
     '@/common': path.resolve(__dirname, '..', 'packages/common'),
     '@/components': path.resolve(__dirname, '..', 'packages/components'),
     '@/style': path.resolve(__dirname, '..', 'packages/style'),
-    '@/types': path.resolve(__dirname, '..', 'packages/types'),
+    '@/types': path.resolve(__dirname, '..', 'types'),
   },
 }
 

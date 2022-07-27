@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Icon } from '@icon-park/svg/lib/runtime'
+import { Base64 } from 'js-base64'
 import { LiSvgIconProps } from '@/types/icon'
 
 const useSrc = ({
@@ -9,18 +9,19 @@ const useSrc = ({
   strokeWidth,
   strokeLinecap,
   theme = 'outline',
-  icon = 'ErrorPicture',
+  icon,
 }: LiSvgIconProps): [string | undefined] => {
   const [svgBase, setSvgBase] = useState<string>()
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    const svgXmlData = require('@icon-park/svg')[icon || ''] as Icon
-    if (!svgXmlData) {
-      console.warn(`没有"${icon as string}"这个icon，请检查icon-park 和 自定义图标库。`)
+    if (!icon) {
+      console.warn(`没有指定icon，请前往选择icon-park。`)
+    } else {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+      const svgConfig = icon({ size, fill, strokeLinejoin, strokeWidth, strokeLinecap, theme })
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      setSvgBase(`data:image/svg+xml;base64,${Base64.btoa(svgConfig)}`)
     }
-    const svgConfig = svgXmlData({ size, fill, strokeLinejoin, strokeWidth, strokeLinecap, theme })
-    setSvgBase(`data:image/svg+xml;base64,${window.btoa(svgConfig)}`)
   }, [size, fill, strokeLinejoin, strokeWidth, strokeLinecap, theme, icon])
 
   return [svgBase]

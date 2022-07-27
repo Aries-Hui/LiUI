@@ -5,6 +5,8 @@ import RollupCommonjs from '@rollup/plugin-commonjs'
 import RollupTypescript from 'rollup-plugin-typescript2'
 import RollupCopy from 'rollup-plugin-copy'
 import Package from '../package.json'
+import alias from '@rollup/plugin-alias'
+import path from 'path'
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 const resolveFile = (path) => NodePath.resolve(__dirname, '..', path)
@@ -50,6 +52,14 @@ export default {
           src: resolveFile('packages/style'),
           dest: resolveFile('dist'),
         },
+      ],
+    }),
+    alias({
+      entries: [
+        { find: '@/common', replacement: path.resolve(__dirname, '..', 'packages/common') },
+        { find: '@/components', replacement: path.resolve(__dirname, '..', 'packages/components') },
+        { find: '@/style', replacement: path.resolve(__dirname, '..', 'packages/style') },
+        { find: '@/types', replacement: path.resolve(__dirname, '..', 'types') },
       ],
     }),
   ],
