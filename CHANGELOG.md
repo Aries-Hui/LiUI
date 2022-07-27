@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/Aries-Hui/LiUI/compare/v1.3.3...v1.3.4) (2022-07-27)
+
+
+### Bug Fixes
+
+*  icon out size ([8e2e52b](https://github.com/Aries-Hui/LiUI/commit/8e2e52b302f92bfbc0a69b0e5fac036e8fb667d7))
+
 ## [1.3.3](https://github.com/Aries-Hui/LiUI/compare/v1.3.2...v1.3.3) (2022-07-26)
 
 
