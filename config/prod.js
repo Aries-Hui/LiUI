@@ -4,9 +4,9 @@ module.exports = {
   },
   defineConstants: {},
   mini: {
-    webpackChain(chain, webpack) {
-      chain.plugin('bundle analyzer').use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
-    },
+    // webpackChain(chain, webpack) {
+    //   chain.plugin('bundle analyzer').use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
+    // },
   },
   h5: {
     /**
