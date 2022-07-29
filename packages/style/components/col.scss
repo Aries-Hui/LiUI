@@ -1,0 +1,18 @@
+@import "../variables/default.scss";
+
+@for $i from 1 through 24 {
+  .#{$pre-fixed-name}__col.#{$pre-fixed-name}__col--#{$i} {
+    flex: 0 0 $i * calc(100% / 24);
+    max-width: $i * calc(100% / 24);
+  }
+
+  .#{$pre-fixed-name}__col.#{$pre-fixed-name}__col--offset--#{$i} {
+    margin-left: $i * calc(100% / 24);
+  }
+}
+
+.#{$pre-fixed-name}__col {
+  min-height: 10px;
+  text-align: center;
+  margin: 0;
+}

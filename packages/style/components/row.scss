@@ -1,0 +1,41 @@
+@import "../variables/default.scss";
+@import "../mixins/index.scss";
+
+.#{$pre-fixed-name}__row {
+  @include display-flex;
+  @include flex-wrap(wrap);
+  overflow-x: hidden;
+
+  &--nowrap {
+    @include flex-wrap;
+    overflow-x: auto;
+  }
+
+  &--justify-center {
+    @include justify-content(center);
+  }
+
+  &--justify-end {
+    @include justify-content(flex-end);
+  }
+
+  &--justify-space-between {
+    @include justify-content(space-between);
+  }
+
+  &--justify-space-around {
+    @include justify-content(space-around);
+  }
+
+  &--align-center {
+    @include align-items(center);
+  }
+
+  &--align-bottom {
+    @include align-items(flex-end);
+  }
+
+  &--align-top {
+    @include align-items(flex-start);
+  }
+}

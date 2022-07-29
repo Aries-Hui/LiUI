@@ -1,0 +1,21 @@
+.liui__demo__home {
+  padding: 15PX;
+
+  &--name {
+    font-size: 32PX;
+  }
+
+  &--desc {
+    margin: 0 0 40PX;
+    color: rgba(69,90,100,.6);
+    font-size: 28px;
+  }
+
+  &--nav{
+    &__title {
+      margin: 24PX 0 8PX 16PX;
+      color: rgba(69,90,100,.6);
+      font-size: 14PX;
+    }
+  }
+}

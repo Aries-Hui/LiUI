@@ -1,9 +1,7 @@
 import { ComponentClass } from 'react'
 import { CommonEventFunction } from '@tarojs/components/types/common'
 
-import AtComponent from './base'
-
-export interface LiToastProps extends AtComponent {
+export interface LiToastProps {
   /**
    * 是否展示元素
    * @default false

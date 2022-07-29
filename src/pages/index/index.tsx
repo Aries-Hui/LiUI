@@ -1,8 +1,10 @@
+import '@aries-hui/liui/dist/style/index.css'
+
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
-import { View, Text, Button, CustomWrapper } from '@tarojs/components'
-import { MarketAnalysis } from '@icon-park/svg'
-import { LiIcon } from '@aries-hui/liui'
+import { View, Text, Button, CustomWrapper, Image } from '@tarojs/components'
+import { LiCol, LiRow } from '@aries-hui/liui'
+import menu from './menu'
 
 import './index.scss'
 
@@ -13,22 +15,52 @@ export default class Index extends Component {
 
   render() {
     return (
-      <View className="index">
-        <LiIcon icon={MarketAnalysis} theme="multi-color" size="24" fill={['#333', '#2F88FF', '#FFF', '#43CCF8']} />
+      <View className="liui__demo__home">
+        {/* <LiIcon icon={MarketAnalysis} theme="multi-color" size="24" fill={['#333', '#2F88FF', '#FFF', '#43CCF8']} /> */}
         <CustomWrapper>
-          <Text>Hello Liui!</Text>
+          <LiRow justify="start" align="center">
+            <LiCol span={10}>
+              <Image
+                src="https://avatars.githubusercontent.com/u/44386646?s=96&v=4"
+                style={{
+                  borderRadius: '50%',
+                  width: '100px',
+                  height: '100px',
+                }}
+              />
+            </LiCol>
+            <LiCol span={14}>
+              <View>
+                <Text className="liui__demo__home--name">LiUi</Text>
+              </View>
+              <View>
+                <Text className="liui__demo__home--desc">基于taro的多端组件库</Text>
+              </View>
+            </LiCol>
+          </LiRow>
         </CustomWrapper>
-        <Button
-          onClick={() => {
-            Taro.navigateTo({
-              url: '/pages/page/path/name',
-            })
-              .then((res) => console.log(res))
-              .catch((err) => console.log(err))
-          }}
-        >
-          icon
-        </Button>
+        {menu?.map((menuItem) => (
+          <LiRow justify="start" className="liui__demo__home--nav">
+            <LiCol span={24}>
+              <Text className="liui__demo__home--nav__title">{menuItem.name}</Text>
+            </LiCol>
+            {menuItem.child?.map((child) => (
+              <LiCol span={24}>
+                <Button
+                  onClick={() => {
+                    Taro.navigateTo({
+                      url: child.router,
+                    })
+                      .then((res) => console.log(res))
+                      .catch((err) => console.log(err))
+                  }}
+                >
+                  {child.key} {child.name}
+                </Button>
+              </LiCol>
+            ))}
+          </LiRow>
+        ))}
       </View>
     )
   }
