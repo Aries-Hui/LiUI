@@ -1,4 +1,4 @@
-import '@aries-hui/liui/dist/style/index.css'
+import '@aries-hui/liui/style/index.css'
 
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
