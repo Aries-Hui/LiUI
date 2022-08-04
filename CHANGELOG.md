@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/Aries-Hui/LiUI/compare/v1.3.7...v1.4.0) (2022-08-04)
+
+
+### Features
+
+* add lidivider and demo ([a55c94e](https://github.com/Aries-Hui/LiUI/commit/a55c94eac9a8acbd94ce298c5912c8d5b38dbce8))
+
 ## [1.3.7](https://github.com/Aries-Hui/LiUI/compare/v1.3.6...v1.3.7) (2022-08-01)
 
 
