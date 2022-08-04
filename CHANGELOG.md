@@ -1,3 +1,10 @@
+## [1.3.7](https://github.com/Aries-Hui/LiUI/compare/v1.3.6...v1.3.7) (2022-08-01)
+
+
+### Bug Fixes
+
+* demo fix ([1a82cbe](https://github.com/Aries-Hui/LiUI/commit/1a82cbed0ed3d1c2613b016f8076ad7ebab768b5))
+
 ## [1.3.6](https://github.com/Aries-Hui/LiUI/compare/v1.3.5...v1.3.6) (2022-07-29)
 
 
