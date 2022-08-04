@@ -11,7 +11,18 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist-taro',
-  plugins: [],
+  plugins: [
+    [
+      '@tarojs/plugin-html',
+      {
+        modifyElements(inline, block) {
+          // 行内元素添加 <span>， 行内元素删除 <code>
+          block.push('code')
+          inline.splice(inline.indexOf('code'), 1)
+        },
+      },
+    ],
+  ],
   defineConstants: {},
   copy: {
     patterns: [],

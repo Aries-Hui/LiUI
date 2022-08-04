@@ -6,3 +6,33 @@ $color-success: #13CE66 !default;
 $color-error: #FF4949 !default;
 $color-warning: #FFC82C !default;
 $color-info: #78A4FA !default;
+
+$font-size-base: 14PX;
+$font-size-lg: $font-size-base + 2PX;
+$font-size-sm: 12PX;
+
+// vertical paddings
+$padding-lg: 24PX; // containers
+$padding-md: 16PX; // small containers and buttons
+$padding-sm: 12PX; // Form controls and items
+$padding-xs: 8PX; // small items
+$padding-xss: 4PX; // more small
+
+/* Border */
+$border-width-base: 1PX;
+$border-radius-base: 8PX;
+
+/* divider */
+$divider-text-color: rgba(0, 0, 0, 0.85);
+$divider-text-height: 24PX;
+$divider-orientation-margin: 5%;
+$divider-color: rgba(0, 0, 0, 15%);
+$divider-vertical-gutter: $padding-xs;
+
+/* code */
+//$code-radius: $border-radius-base;
+$code-padding: $padding-xs 0 ;
+$code-number-padding: $padding-xss;
+$code-line-padding: $padding-xss;
+$code-font-size: $font-size-base;
+

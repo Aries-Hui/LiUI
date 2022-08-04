@@ -47,10 +47,10 @@ jobs:
           NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
           NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
           NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
-      - name: ci
-        run: npm ci
+#      - name: ci
+#        run: npm ci
       - name: install @tarojs/cli
-        run: npm install --global @tarojs/cli@3.5.0-beta.7
+        run: npm install --global @tarojs/cli@3.5.1
       - name: npm update
         run: npm update @aries-hui/liui
       - name:  build weapp/demo

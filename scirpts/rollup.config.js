@@ -47,14 +47,6 @@ export default {
   ],
   external: externalPackages,
   plugins: [
-    RollupAlias({
-      entries: [
-        { find: '@/common', replacement: path.resolve(__dirname, '..', 'packages/common') },
-        { find: '@/components', replacement: path.resolve(__dirname, '..', 'packages/components') },
-        { find: '@/style', replacement: path.resolve(__dirname, '..', 'packages/style') },
-        { find: '@/types', replacement: path.resolve(__dirname, '..', 'types') },
-      ],
-    }),
     RollupNodeResolve({
       moduleDirectories: ['node_modules'],
       // browser: true,
@@ -81,5 +73,13 @@ export default {
       // process: processSass,
     }),
     RollupTerser.terser(),
+    RollupAlias({
+      entries: [
+        { find: '@/common', replacement: path.resolve(__dirname, '..', 'packages/common') },
+        { find: '@/components', replacement: path.resolve(__dirname, '..', 'packages/components') },
+        { find: '@/style', replacement: path.resolve(__dirname, '..', 'packages/style') },
+        { find: '@/types', replacement: path.resolve(__dirname, '..', 'types') },
+      ],
+    }),
   ],
 }

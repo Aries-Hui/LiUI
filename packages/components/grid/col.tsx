@@ -5,14 +5,14 @@ import { prefixedName } from '@/common/constants'
 import RowContext from '@/components/grid/rowContext'
 import { LiColProps } from '@/types/col'
 
-const prefixedCol = `${prefixedName}__col`
+const prefixCls = `${prefixedName}__col`
 
 const Col: FC<LiColProps> = ({ span, offset, order, children }) => {
   const { gutter = [undefined, undefined] } = useContext(RowContext)
 
-  const classes = classNames(prefixedCol, {
-    [`${prefixedCol}--${span}`]: !!span,
-    [`${prefixedCol}--offset--${offset}`]: !!offset,
+  const classes = classNames(prefixCls, {
+    [`${prefixCls}--${span}`]: !!span,
+    [`${prefixCls}--offset--${offset}`]: !!offset,
   })
 
   return (

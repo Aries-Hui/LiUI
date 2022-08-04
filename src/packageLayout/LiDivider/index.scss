@@ -1,0 +1,21 @@
+@import "~@aries-hui/liui/dist/style/components/divider.scss";
+@import "~@aries-hui/liui/dist/style/components/code.scss";
+
+.liui__demo__divider {
+  padding: 15PX;
+
+  &--title {
+    padding: 36px 0;
+    &__text {
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    &__desc {
+      font-size: 24px;
+      color: #999999;
+      padding: 0 32px;
+      border-left: 1px solid #999999;
+    }
+  }
+}

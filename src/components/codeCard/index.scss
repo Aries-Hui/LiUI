@@ -1,0 +1,18 @@
+.liui__demo__codeCard {
+  margin-bottom: 48px;
+  background-color: #fff;
+  border-radius: 8PX;
+  box-shadow: 0 8PX 12PX #ebedf0;
+
+  &--example {
+    padding: 24px;
+  }
+  &--desc {
+    padding: 24px;
+    font-size: 24px;
+    color: #666666;
+  }
+  &--code {
+    padding: 24px;
+  }
+}
