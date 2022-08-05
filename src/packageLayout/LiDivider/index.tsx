@@ -16,61 +16,60 @@ const LiDividerDemo: FC = () => (
         description="默认为水平分割线，可在中间加入文字。"
         codeNode={
           <LiCode
-            codeString={`
-<LiDivider />
-<LiDivider dashed/>
-<LiDivider>你好</LiDivider>
-<LiDivider dashed>你好</LiDivider>
-`}
+            codeString={
+              '<LiDivider />\n' +
+              '<LiDivider dashed/>\n' +
+              '<LiDivider>分割线</LiDivider>\n' +
+              '<LiDivider dashed>分割线</LiDivider>'
+            }
           />
         }
       >
         <LiDivider />
         <LiDivider dashed />
-        <LiDivider>你好</LiDivider>
-        <LiDivider dashed>你好</LiDivider>
+        <LiDivider>分割线</LiDivider>
+        <LiDivider dashed>分割线</LiDivider>
       </CodeCard>
       <CodeCard
         codeNode={
           <LiCode
             codeString={
-              '<LiDivider type="vertical">竖向</LiDivider>\n<LiDivider type="vertical" dashed>\n  竖向222\n</LiDivider>'
+              '<LiDivider type="vertical">竖向Text</LiDivider>\n' +
+              '<LiDivider type="vertical">竖向Text</LiDivider>\n' +
+              '<LiDivider type="vertical" dashed>竖向Text</LiDivider>'
             }
           />
         }
         title="垂直分割线"
         description={'使用 type="vertical" 设置为行内的垂直分割线。'}
       >
-        <LiDivider type="vertical">竖向</LiDivider>
+        <LiDivider type="vertical">竖向Text</LiDivider>
+        <LiDivider type="vertical">竖向Text</LiDivider>
         <LiDivider type="vertical" dashed>
-          竖向222
+          竖向Text
         </LiDivider>
       </CodeCard>
       <CodeCard
         codeNode={
           <LiCode
             codeString={
-              '<LiDivider orientation="left">你3好</LiDivider>\n' +
-              '<LiDivider orientation="left" orientationMargin={20}>\n' +
-              '  你3好\n' +
-              '</LiDivider>\n' +
-              '<LiDivider orientation="right">你3好</LiDivider>\n' +
-              '<LiDivider orientation="right" orientationMargin={20}>\n' +
-              '  你3好\n' +
-              '</LiDivider>'
+              '<LiDivider orientation="left">左侧分割</LiDivider>\n' +
+              '<LiDivider orientation="left" orientationMargin={20}>左侧间距20分割</LiDivider>\n' +
+              '<LiDivider orientation="right">右侧分割</LiDivider>\n' +
+              '<LiDivider orientation="right" orientationMargin={20}>右侧间距20分割</LiDivider>'
             }
           />
         }
         title="分割线文字位置"
         description="分割线中带有文字，可以用 orientation 指定文字位置。"
       >
-        <LiDivider orientation="left">你3好</LiDivider>
+        <LiDivider orientation="left">左侧分割</LiDivider>
         <LiDivider orientation="left" orientationMargin={20}>
-          你3好
+          左侧间距20分割
         </LiDivider>
-        <LiDivider orientation="right">你3好</LiDivider>
+        <LiDivider orientation="right">右侧分割</LiDivider>
         <LiDivider orientation="right" orientationMargin={20}>
-          你3好
+          右侧间距20分割
         </LiDivider>
       </CodeCard>
     </View>

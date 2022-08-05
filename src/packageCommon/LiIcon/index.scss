@@ -1,0 +1,28 @@
+.liui__demo__icon {
+  padding: 15PX;
+
+  &--title {
+    padding: 36px 0;
+    &__text {
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    &__desc {
+      font-size: 24px;
+      color: #999999;
+      margin: 0 16px;
+      padding: 0 16px;
+      border-left: 1px solid #999999;
+    }
+  }
+
+  &--infer {
+    background: #eef0f4;
+    font-size: 24px;
+    color: #4f4f4f;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 48px;
+  }
+}

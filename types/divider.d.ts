@@ -1,7 +1,7 @@
-import { ComponentType } from 'react'
+import { ComponentType, ReactNode } from 'react'
 import { BaseComponentProps } from '@/types/base'
 
-export interface LiDividerProps extends BaseComponentProps {
+export interface LiDividerProps extends Exclude<BaseComponentProps, 'children'> {
   /** 是否虚线		*/
   dashed?: boolean
   /**
@@ -16,6 +16,8 @@ export interface LiDividerProps extends BaseComponentProps {
    * @default horizontal
    *  */
   type?: 'horizontal' | 'vertical'
+  /** 子节点*/
+  children?: string | ReactNode
 }
 
 declare const LiDivider: ComponentType<LiDividerProps>

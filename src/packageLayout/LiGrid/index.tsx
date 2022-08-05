@@ -12,8 +12,9 @@ export default class Index extends Component {
   render() {
     return (
       <View className="liui__demo__grid">
-        <View>
-          <Text>Grid</Text>
+        <View className="liui__demo__grid--title">
+          <Text className="liui__demo__grid--title__text">Grid</Text>
+          <Text className="liui__demo__grid--title__desc">栅格</Text>
         </View>
         <View>
           <LiRow>

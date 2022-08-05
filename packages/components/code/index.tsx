@@ -22,12 +22,16 @@ const Code: FC<LiCodeProps> = ({ codeString, ...restProps }) => {
                 {...getLineProps({ line, key: i })}
                 className={classNames(getLineProps({ line, key: i }).className, `${prefixCls}--content__row`)}
               >
-                <Text className={`${prefixCls}--content__row--line`}>{i + 1}</Text>
-                <Text className={`${prefixCls}--content__row--line`}>
-                  {line.map((token, key) => (
-                    <Text key={`liui__code--row__${i}--text__${key}`} {...getTokenProps({ token, key })} />
-                  ))}
-                </Text>
+                <View className={`${prefixCls}--content__row--flex--0`}>
+                  <Text className={`${prefixCls}--content__row--num`}>{i + 1}</Text>
+                </View>
+                <View className={`${prefixCls}--content__row--flex--1`}>
+                  <Text className={`${prefixCls}--content__row--line`}>
+                    {line.map((token, key) => (
+                      <Text key={`liui__code--row__${i}--text__${key}`} {...getTokenProps({ token, key })} />
+                    ))}
+                  </Text>
+                </View>
               </View>
             ))}
           </View>

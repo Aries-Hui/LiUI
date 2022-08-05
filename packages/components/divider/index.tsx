@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import classNames from 'classnames'
-import { Text, View } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import { prefixedName } from '@/common/constants'
 import { LiDividerProps } from '@/types/divider'
 
@@ -30,9 +30,9 @@ const Divider: FC<LiDividerProps> = ({
   return (
     <View className={classes} {...restProps}>
       {children && (
-        <Text className={`${prefixCls}--inner-text`} style={innerStyle}>
+        <View className={`${prefixCls}--inner-text`} style={innerStyle}>
           {children}
-        </Text>
+        </View>
       )}
     </View>
   )

@@ -9,6 +9,17 @@
     &__row {
       line-height: $code-font-size * 1.5;
       font-size: $code-font-size;
+      display: flex;
+
+      &--flex {
+        &--0 {
+          flex-shrink: 0;
+        }
+
+        &--1{
+          flex: 1;
+        }
+      }
 
       &--num {
         padding: 0 $code-number-padding;
