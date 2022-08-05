@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/Aries-Hui/LiUI/compare/v1.4.0...v1.4.1) (2022-08-05)
+
+
+### Bug Fixes
+
+* add icon demo ([408ac24](https://github.com/Aries-Hui/LiUI/commit/408ac243e43dff5e62ab90b04c77f00ffc93a803))
+
 # [1.4.0](https://github.com/Aries-Hui/LiUI/compare/v1.3.7...v1.4.0) (2022-08-04)
 
 
